@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE policyconfig PUBLIC "-//freedesktop//DTD PolicyKit Policy Configuration 1.0//EN"
+"http://www.freedesktop.org/software/polkit/policyconfig-1.dtd">
+<policyconfig>
+
+  <vendor>Omen RGB GUI Project</vendor>
+  <vendor_url>https://github.com/cousteauche/omen-rgb-gui</vendor_url>
+
+  <action id="com.github.cousteauche.omenrgbgui.applyrgb">
+    <description>Apply HP Omen Keyboard RGB Settings</description>
+    <message>Authentication is required to change HP Omen keyboard lighting settings.</message>
+    <defaults>
+      <allow_any>no</allow_any>
+      <allow_inactive>no</allow_inactive>
+      <allow_active>auth_admin_keep</allow_active>
+    </defaults>
+    <annotate key="org.freedesktop.policykit.exec.path">/usr/local/bin/omen-rgb-helper.sh</annotate>
+  </action>
+
+</policyconfig>
