@@ -1,0 +1,14 @@
+pkg/
+src/
+archlinux/pkg/
+archlinux/src/
+archlinux/omen-rgb-gui
+
+*.pkg.tar.zst
+*.pkg.tar.xz
+*.pkg.tar.gz
+*.pkg.tar.bz2
+
+*.log
+
+
