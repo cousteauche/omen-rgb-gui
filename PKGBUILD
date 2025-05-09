@@ -6,6 +6,7 @@ pkgrel=1
 pkgdesc="PyQt6 GUI for HP Omen 4-zone keyboard RGB control"
 arch=('any')
 url="https://github.com/cousteauche/omen-rgb-gui"
+source=("$pkgname::git+$url.git#branch=PKGBUILD")
 license=('GPL3') # Ensure you have a LICENSE file in your repo
 depends=(
     'python-pyqt6'
