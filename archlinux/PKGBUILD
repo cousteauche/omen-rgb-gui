@@ -14,14 +14,11 @@ depends=(
     # Optional: 'hp-wmi-omen-rgb-dkms' (or similar kernel module package)
 )
 makedepends=('git')
-source=("git+${url}.git")
 sha256sums=('SKIP')
 
 pkgver() {
-  cd "${srcdir}/${_gitname}"
-  git describe --long --tags --dirty --abbrev=7 2>/dev/null | \
-    sed -E 's/^v//; s/-([0-9]+)-g([0-9a-fA-F]+)/.r\1.\2/; s/-/./g; s/\.dirty$/.dirty/' || \
-    printf "0.r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short=7 HEAD)"
+    cd "${_gitpkgname}"
+    printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
 }
 
 package() {
